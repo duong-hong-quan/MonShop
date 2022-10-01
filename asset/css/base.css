@@ -241,38 +241,3 @@ html {
 .pagination-item--active .pagination-item__link:hover {
     background-color: #ed5c3f;
 }
-
-/* ================================================================= */
-.banner {
-    margin-top: 20px;
-}
-
-.banner__header {
-    width: 100%;
-}
-
-.banner__header-sub {
-    width: 100%;
-}
-
-.banner-serivce {
-    height: 124px;
-
-}
-
-.banner-service-item {
-    cursor: pointer;
-    padding: 12px;
-    width: 150px;
-    display: block;
-    text-align: center;
-}
-.banner-service-item-icon{
-    width: 45px;
-    height: 45px;
-}
-
-.banner-service-item-label{
-    font-size: 1.4rem;
-    font-weight: 400;
-}

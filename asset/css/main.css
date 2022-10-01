@@ -1314,3 +1314,39 @@ i.home-product-item__like-icon-fill {
     text-align: center;
     color: #737373;
 }
+
+
+/* ================================================================= */
+.banner {
+    margin-top: 20px;
+}
+
+.banner__header {
+    width: 100%;
+}
+
+.banner__header-sub {
+    width: 100%;
+}
+
+.banner-serivce {
+    height: 124px;
+
+}
+
+.banner-service-item {
+    cursor: pointer;
+    padding: 12px;
+    width: 150px;
+    display: block;
+    text-align: center;
+}
+.banner-service-item-icon{
+    width: 45px;
+    height: 45px;
+}
+
+.banner-service-item-label{
+    font-size: 1.4rem;
+    font-weight: 400;
+}
