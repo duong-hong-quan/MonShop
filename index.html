@@ -107,10 +107,11 @@
                             </a>
 
                         </li>
-                        <!-- <li class="header__navbar-item header__navbar-item--strong header__navbar-item--seperate">Đăng
-                            ký
+                        <!-- <li
+                            class="header__navbar-item header__navbar-item--strong header__navbar-item--seperate  js-register">
+                            Đăng ký
                         </li>
-                        <li class="header__navbar-item header__navbar-item--strong">Đăng nhập</li> -->
+                        <li class="header__navbar-item header__navbar-item--strong js-login">Đăng nhập</li> -->
 
                         <li class="header__navbar-item header__navbar-user">
                             <img src="https://scontent.fsgn5-6.fna.fbcdn.net/v/t39.30808-1/305401618_112341014941746_7229606053298462997_n.jpg?stp=dst-jpg_p240x240&_nc_cat=108&ccb=1-7&_nc_sid=7206a8&_nc_ohc=j_e4qtEQeuAAX_uiyHQ&_nc_ht=scontent.fsgn5-6.fna&oh=00_AT8yhTe20TRg97SBxveamwwZw4Hsc_k-OtUKYm2fsny0aw&oe=633B7550"
@@ -1121,18 +1122,18 @@
         </footer>
     </div>
 
-    <!-- MODAL LAYOUT -->
-    <!-- <div class="modal">
-        <div class="modal__overlay"></div>
-        <div class="modal__body"> -->
-
-
     <!-- Register form -->
-    <!-- <div class="auth-form">
-                <div class="auth-form__container">
+    <!-- MODAL LAYOUT -->
+    <div class="modal js-modal">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+            <div class="auth-form">
+
+                <div class="auth-form__container js-modal-container">
+
                     <div class="auth-form__header">
                         <h3 class="auth-form__heading">Đăng ký</h3>
-                        <span class="auth-form__switch-btn">Đăng nhập</span>
+                        <span class="auth-form__switch-btn js-modal-close js-login">Đăng nhập</span>
                     </div>
                     <div class="auth-form__form">
                         <div class="auth-form__group">
@@ -1153,8 +1154,8 @@
                         </p>
                     </div>
                     <div class="auth-form__controls">
-                        <button class="btn auth-form__controls-back btn--normal">TRỞ LẠI</button>
-                        <button class="btn btn--primary">ĐĂNG KÝ</button>
+                        <button class="btn auth-form__controls-back btn--normal js-modal-close">TRỞ LẠI</button>
+                        <button class="btn btn--primary js-modal-close">ĐĂNG KÝ</button>
 
                     </div>
                 </div>
@@ -1168,14 +1169,19 @@
                         <span class="auth-form__socials-title">Kết nối với Google</span>
                     </a>
                 </div>
-            </div> -->
+            </div>
 
+        </div>
+    </div>
     <!-- Login form -->
-    <!-- <div class="auth-form">
-                <div class="auth-form__container">
+    <div class="modal js-modal1">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+            <div class="auth-form">
+                <div class="auth-form__container js-modal1-container">
                     <div class="auth-form__header">
                         <h3 class="auth-form__heading">Đăng nhập</h3>
-                        <span class="auth-form__switch-btn">Đăng ký</span>
+                        <span class="auth-form__switch-btn js-modal1-close js-register">Đăng ký</span>
                     </div>
                     <div class="auth-form__form">
                         <div class="auth-form__group">
@@ -1188,15 +1194,15 @@
                     </div>
                     <div class="auth-form__aside">
                         <div class="auth-form__help">
-                            <a href="" class="auth-form__help-link auth-form__help-link-forgot">Quên mật khẩu</a>
+                            <a href="" class="auth-form__help-link auth-form__help-link-forgot">Quên mật
+                                khẩu</a>
                             <span class="auth-form__help-separate"></span>
                             <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
                         </div>
                     </div>
                     <div class="auth-form__controls">
-                        <button class="btn auth-form__controls-back btn--normal">TRỞ LẠI</button>
-                        <button class="btn btn--primary">ĐĂNG NHẬP</button>
-
+                        <button class="btn auth-form__controls-back btn--normal js-modal1-close">TRỞ LẠI</button>
+                        <button class="btn btn--primary js-modal1-close">ĐĂNG NHẬP</button>
                     </div>
                 </div>
                 <div class="auth-form__socials">
@@ -1209,9 +1215,73 @@
                         <span class="auth-form__socials-title">Kết nối với Google</span>
                     </a>
                 </div>
-            </div>  -->
-    <!-- </div> -->
-    <!-- </div> -->
+            </div>
+        </div>
+    </div>
+
+
 </body>
+
+<script>
+    const registers = document.querySelectorAll('.js-register')
+    const modal = document.querySelector('.js-modal')
+    const modalCloses = document.querySelectorAll('.js-modal-close')
+    const modalContainer = document.querySelector('.js-modal-container')
+
+    const logins = document.querySelectorAll('.js-login')
+    const modal1 = document.querySelector('.js-modal1')
+    const modalCloses1 = document.querySelectorAll('.js-modal1-close')
+    const modalContainer1 = document.querySelector('.js-modal1-container')
+
+    function showRegister() {
+        modal.classList.add('open')
+    }
+    function hideRegister() {
+        modal.classList.remove('open')
+    }
+    function showLogin() {
+        modal1.classList.add('open')
+    }
+    function hideLogin() {
+        modal1.classList.remove('open')
+    }
+
+
+    for (const register of registers) {
+        register.addEventListener('click', showRegister)
+    }
+    for (const login of logins) {
+        login.addEventListener('click', showLogin)
+
+    }
+    for (const modalClose of modalCloses) {
+        modalClose.addEventListener('click', hideRegister)
+    }
+    for (const modalClose1 of modalCloses1) {
+        modalClose1.addEventListener('click', hideLogin)
+    }
+    // modalClose.addEventListener('click', hideRegister)
+    modal.addEventListener('click', hideRegister)
+    modalContainer.addEventListener('click', function (event) {
+        event.stopPropagation()
+    })
+   
+    // modalClose1.addEventListener('click', hideLogin)
+    modal1.addEventListener('click', hideLogin)
+    modalContainer1.addEventListener('click', function (event) {
+        event.stopPropagation()
+    })
+
+
+
+
+
+
+
+
+
+
+</script>
+
 
 </html>

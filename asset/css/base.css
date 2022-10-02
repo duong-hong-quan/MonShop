@@ -69,6 +69,12 @@ html {
     margin-left: -5px;
     margin-right: -5px;
 }
+.grid__row1 {
+    display: block;
+    /* flex-wrap: wrap; */
+ 
+}
+
 
 .grid__column {}
 
